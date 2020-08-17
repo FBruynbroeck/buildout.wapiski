@@ -1,0 +1,25 @@
+#content-header {
+    background-image: url(/++theme++custom/images/banner_top.jpg);
+    background-size: cover;
+}
+#portal-header {
+    margin: 0;
+}
+.plone-breadcrumb {
+    background-color: #f7ffb3;
+}
+
+.plone-breadcrumb ol > li + li::after {
+    color: #f7ffb3;
+
+}
+.plone-breadcrumb ol > li + li::before {
+    color: #0079b3;
+
+}
+
+@media (min-width: 768px) {
+#portal-searchbox {
+    top: 90px;
+}
+}
