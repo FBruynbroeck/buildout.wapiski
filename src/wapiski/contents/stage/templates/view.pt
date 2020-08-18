@@ -6,7 +6,7 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone.dexterity">
 <body>
-<metal:main fill-slot="main">
+<metal:content-core fill-slot="content-core">
 
     <h1 class="documentFirstHeading" tal:content="structure here/title" />
     <div tal:define="picture nocall:context/image"
@@ -34,7 +34,7 @@
         <div tal:replace="structure python:context.text.output_relative_to(view.context)"/>
     </div>
 
-</metal:main>
+</metal:content-core>
 </body>
 </html>
 
