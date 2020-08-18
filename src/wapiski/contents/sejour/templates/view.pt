@@ -7,16 +7,12 @@
       i18n:domain="plone.dexterity">
 <body>
 <metal:content-core fill-slot="content-core">
-
-    <h1 class="documentFirstHeading" tal:content="structure here/title" />
     <div tal:define="picture nocall:context/image"
          class="text-center"
          tal:condition="nocall:picture">
          <img tal:define="scales context/@@images"
               tal:replace="structure python: scales.tag('image', css_class='image-inline', scale='large')" />
     </div>
-    <br>
-    <div class="documentDescription" tal:content="structure python: view.lf_to_p(context.description)" />
     <div tal:condition="context/location">
         <h3>Où ?</h3>
         <tal:date tal:content="context/location"/>
@@ -33,7 +29,6 @@
         <h3 tal:content="structure view/widgets/text/label" />
         <div tal:replace="structure python:context.text.output_relative_to(view.context)"/>
     </div>
-
 </metal:content-core>
 </body>
 </html>
