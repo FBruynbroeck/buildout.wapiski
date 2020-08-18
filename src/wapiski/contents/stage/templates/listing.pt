@@ -51,6 +51,11 @@
               <metal:block define-slot="entry">
                 <article class="entry">
                   <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
+                    <div class="cal_date" tal:define="startf python:view.date_speller(item.start)">
+                        <span class="cal_month" tal:content="string:${startf/month_name}">Oct.</span>
+                        <span class="cal_day" tal:content="string:${startf/day}">15</span>
+                        <span class="cal_wkday" tal:content="python:startf['wkday_name']">Tue</span>
+                    </div>
                     <span class="summary" tal:attributes="title item_title">
                     <h1>
                       <a tal:condition="python:item_type == 'File' and showicons"
@@ -110,21 +115,23 @@
                             <tal:comment replace="nothing">
                               Place custom listing info for custom types here
                             </tal:comment>
+                            <br>
+                            <tal:price
+                                tal:condition="item_price"
+                                tal:replace="python: 'Prix: %s' % item_price">
+                              price
+                            </tal:price>
+                            <br>
+                            <tal:description
+                                tal:condition="item_description"
+                                tal:replace="item_description">
+                              description
+                            </tal:description>
                           </metal:description>
                         </tal:byline>
                       </div>
                     </metal:block>
                   </header>
-                  <p class="description discreet"
-                      tal:condition="item_price"
-                      tal:content="python: 'Prix: %s' % item_price">
-                    price
-                  </p>
-                  <p class="description discreet"
-                      tal:condition="item_description"
-                      tal:content="item_description">
-                    description
-                  </p>
                 </article>
               </metal:block>
             </tal:block>
