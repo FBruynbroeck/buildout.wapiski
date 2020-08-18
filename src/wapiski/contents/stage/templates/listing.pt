@@ -115,20 +115,20 @@
                             <tal:comment replace="nothing">
                               Place custom listing info for custom types here
                             </tal:comment>
-                            <br>
-                            <tal:price
-                                tal:condition="item_price"
-                                tal:replace="python: 'Prix: %s' % item_price">
-                              price
-                            </tal:price>
-                            <br>
-                            <tal:description
-                                tal:condition="item_description"
-                                tal:replace="item_description">
-                              description
-                            </tal:description>
                           </metal:description>
                         </tal:byline>
+                        <br>
+                        <tal:price
+                            tal:condition="item_price"
+                            tal:replace="python: 'Prix: %s' % item_price">
+                          price
+                        </tal:price>
+                        <br>
+                        <tal:description
+                            tal:condition="item_description"
+                            tal:replace="item_description">
+                          description
+                        </tal:description>
                       </div>
                     </metal:block>
                   </header>
