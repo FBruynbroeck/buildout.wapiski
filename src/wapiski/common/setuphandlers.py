@@ -17,8 +17,8 @@ def run_after(context):
             obj=stages)
         behavior = constrains.ISelectableConstrainTypes(stages)
         behavior.setConstrainTypesMode(constrains.ENABLED)
-        behavior.setLocallyAllowedTypes(['wapiski.Stage'])
-        behavior.setImmediatelyAddableTypes(['wapiski.Stage'])
+        behavior.setLocallyAllowedTypes(['wapiski.Stage', 'EasyForm'])
+        behavior.setImmediatelyAddableTypes(['wapiski.Stage', 'EasyForm'])
         api.content.transition(stages, transition='publish')
     if not api.content.get('/sejours'):
         sejours = api.content.create(
@@ -32,6 +32,6 @@ def run_after(context):
             obj=sejours)
         behavior = constrains.ISelectableConstrainTypes(sejours)
         behavior.setConstrainTypesMode(constrains.ENABLED)
-        behavior.setLocallyAllowedTypes(['wapiski.Sejour'])
-        behavior.setImmediatelyAddableTypes(['wapiski.Sejour'])
+        behavior.setLocallyAllowedTypes(['wapiski.Sejour', 'EasyForm'])
+        behavior.setImmediatelyAddableTypes(['wapiski.Sejour', 'EasyForm'])
         api.content.transition(sejours, transition='publish')

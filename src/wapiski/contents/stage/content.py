@@ -5,6 +5,8 @@ from plone.app.contenttypes.interfaces import IEvent
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import implements
+from collective.folderishtypes.dx.content import FolderishEvent
+from collective.folderishtypes.interfaces import IFolderishEvent
 
 
 class IStage(IEvent):
@@ -35,5 +37,5 @@ class IStage(IEvent):
     )
 
 
-class Stage(Event):
-    implements(IStage)
+class Stage(FolderishEvent):
+    implements(IStage, IFolderishEvent)

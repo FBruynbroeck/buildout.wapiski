@@ -21,4 +21,15 @@
       layer="wapiski.common.interfaces.IBrowserLayer"
       />
 
+  <subscriber
+      for=".content.IStage
+      zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".events.copyEasyForm"
+      />
+
+  <subscriber
+      for=".content.IStage
+      zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+      handler=".events.editEasyForm"
+      />
 </configure>

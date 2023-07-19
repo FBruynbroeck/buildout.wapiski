@@ -5,6 +5,8 @@ from plone.app.contenttypes.interfaces import IEvent
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from zope.interface import implements
+from collective.folderishtypes.dx.content import FolderishEvent
+from collective.folderishtypes.interfaces import IFolderishEvent
 
 
 class ISejour(IEvent):
@@ -35,5 +37,5 @@ class ISejour(IEvent):
     )
 
 
-class Sejour(Event):
-    implements(ISejour)
+class Sejour(FolderishEvent):
+    implements(ISejour, IFolderishEvent)
