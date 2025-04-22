@@ -32,4 +32,13 @@
       zope.lifecycleevent.interfaces.IObjectModifiedEvent"
       handler=".events.editEasyForm"
       />
+
+  <browser:viewlet
+      name="collective.folderishtypes.listing_viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+      class=".viewlets.ListingViewletSejour"
+      for=".content.ISejour"
+      permission="zope2.View"
+      layer="collective.folderishtypes.interfaces.IThemeSpecific"
+      />
 </configure>
